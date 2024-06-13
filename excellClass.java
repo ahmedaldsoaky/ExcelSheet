@@ -130,12 +130,6 @@ public class excellClass {
         
         int j= c - 65;
         i = i - 1;
-        double Z = 0;
-        
-        int Index1_1;
-        int Index1_2;
-        int Index2_1;
-        int Index2_2;
         A1 = A1.toUpperCase();
 
         
@@ -160,113 +154,39 @@ public class excellClass {
         
         if(A1.length() != 6)
         {
-            if(A1.length() == 11)
+            
+            if(NotOperator(A1).equals("-1"))
             {
-                Index1_2 = A1.charAt(5) - 65;//A
-                Index1_1 = A1.charAt(6) - 49;//1
-        
-                Index2_2 = A1.charAt(8) - 65;//E
-                Index2_1 = A1.charAt(9) - 49;//3
+                System.err.println("Error");
+                return;
             }
-            else
-            {
-                Index1_2 = A1.charAt(9) - 65;//A
-                Index1_1 = A1.charAt(10) - 49;//1
-        
-                Index2_2 = A1.charAt(12) - 65;//E
-                Index2_1 = A1.charAt(13) - 49;//1
-            }
-            switch(A1.substring(1, 3))
-            {
-                
-                case "SUM":
-                    
-                    double sum = 0;
-                    
-                    if(Index1_1 == Index2_1)
-                        for (int k = Index1_2; k <= Index2_2; k++) 
-                            sum += Double.parseDouble(array[Index1_1][k]);
-                                                                                                  //                   0       1       2
-                    else                                                                       //A1:C2          0       1       2
-                        for (int k = Index1_1; k <= Index2_1; k++) 
-                            for (int l = Index1_2; l <= Index2_2; l++) 
-                                sum += Double.parseDouble(array[k][l]);
-                    array[i][j] = String.valueOf(sum);
-                    break;
-                    
-                case "MAX":
-                    /*
-                Index1_2 = A1.charAt(9) - 65;//A
-                Index1_1 = A1.charAt(10) - 49;//1
-        
-                Index2_2 = A1.charAt(12) - 65;//E
-                Index2_1 = A1.charAt(13) - 49;//1
-
-                    */
-                    
-                    double first = Double.parseDouble(array[Index1_1][Index1_2]);
-                    double max = first;            //Suppose max the first element
-                    
-                    if(Index1_1 == Index2_1)
-                        for (int k = Index1_2; k <= Index2_2; k++) 
-                            if(max > Double.parseDouble(array[Index1_1][k]))
-                                max = Double.parseDouble(array[Index1_1][k]);
-
-                    else
-                        for (int m = Index1_1 + 1; m <= Index2_1; m++)
-                            for (int l = Index1_2 + 1; l <= Index2_2; l++)
-                                if(max > Double.parseDouble(array[m][l]))
-                                    max = Double.parseDouble(array[m][l]);
-                    array[i][j] = String.valueOf(max);
-                    break;
-                    
-                case "MIN":
-                    
-                     first = Double.parseDouble(array[Index1_1][Index1_2]);
-                    double min = first;            //Suppose max the first element
-                    
-                    if(Index1_1 == Index2_1)
-                        for (int k = Index1_2 + 1; k <= Index2_2; k++) 
-                            if(min < Double.parseDouble(array[Index1_1][k]))
-                                min = Double.parseDouble(array[Index1_1][k]);
-
-                    else
-                        for (int m = Index1_1 + 1; m <= Index2_1; m++)
-                            for (int l = Index1_2 + 1; l <= Index2_2; l++)
-                                if(min < Double.parseDouble(array[m][l]))
-                                    min = Double.parseDouble(array[m][l]);
-                    array[i][j] = String.valueOf(min);
-                    break;
-                case "AVE":
-                     sum = 0;
-                     double count = 0;
-                    if(Index1_1 == Index2_1)
-                        for (int k = Index1_2; k <= Index2_2; k++) 
-                            sum += Double.parseDouble(array[Index1_1][k]);
-                                                                                                  //                   0       1       2
-                    else                                                                       //A1:C2          0       1       2
-                        for (int k = Index1_1; k <= Index2_1; k++) 
-                            for (int l = Index1_2; l <= Index2_2; l++) 
-                                sum += Double.parseDouble(array[k][l]);
-                    array[i][j] = String.valueOf(sum);
-
-                    double ava = sum / count;
-                    array[i][j] = String.valueOf(ava);
-                    break;
-                    
-                default:
-                     System.err.println("Error");
-                     return;
-            }
+            
+            array[i][j] = NotOperator(A1);
         }
         else
         {
-         Index1_2 = A1.charAt(1) - 65;      //A
-         Index1_1 = A1.charAt(2) - 49;      //1
+            if(Operators(A1).equals("-1"))
+            {
+                System.err.println("Error");
+                return;
+            }
+            array[i][j] = Operators(A1);
+        }
         
-         Index2_2 = A1.charAt(4) - 65;
-         Index2_1 = A1.charAt(5) - 49;
-            
+        System.out.println("Done..");
+    }
+    
+    
+    private String Operators (String A1)
+    {
+         int Index1_2 = A1.charAt(1) - 65;      //A
+         int Index1_1 = A1.charAt(2) - 49;      //1
+        
+         int Index2_2 = A1.charAt(4) - 65;
+         int Index2_1 = A1.charAt(5) - 49;
+         
+         double Z = 0;
+         
             switch(A1.charAt(3))
             {
                 case '+':
@@ -295,12 +215,114 @@ public class excellClass {
                          Z = X % Y;
                         break;
                 default:
-                    System.err.println("Error");
+                    System.err.println("-1");
             }
-        array[i][j] = String.valueOf(Z);
-        }
+            return String.valueOf(Z);
+    }
+    
+    private String NotOperator(String A1)
+    {
+        int Index1_2;
+        int Index1_1;
+        int Index2_1;
+        int Index2_2;
         
-        System.out.println("Done..");
+        if(A1.length() == 11)
+            {
+                Index1_2 = A1.charAt(5) - 65;//A
+                Index1_1 = A1.charAt(6) - 49;//1
+        
+                Index2_2 = A1.charAt(8) - 65;//E
+                Index2_1 = A1.charAt(9) - 49;//3
+            }
+            else
+            {
+                Index1_2 = A1.charAt(9) - 65;//A
+                Index1_1 = A1.charAt(10) - 49;//1
+        
+                Index2_2 = A1.charAt(12) - 65;//E
+                Index2_1 = A1.charAt(13) - 49;//1
+            }
+            
+            switch(A1.substring(1, 3))
+            {
+                
+                case "SUM":
+                    
+                    double sum = 0;
+                    
+                    if(Index1_1 == Index2_1)
+                        for (int k = Index1_2; k <= Index2_2; k++) 
+                            sum += Double.parseDouble(array[Index1_1][k]);
+                                                                                                  //                   0       1       2
+                    else                                                                       //A1:C2          0       1       2
+                        for (int k = Index1_1; k <= Index2_1; k++) 
+                            for (int l = Index1_2; l <= Index2_2; l++) 
+                                sum += Double.parseDouble(array[k][l]);
+                    return String.valueOf(sum);
+                    
+                case "MAX":
+                    /*
+                Index1_2 = A1.charAt(9) - 65;//A
+                Index1_1 = A1.charAt(10) - 49;//1
+        
+                Index2_2 = A1.charAt(12) - 65;//E
+                Index2_1 = A1.charAt(13) - 49;//1
+
+                    */
+                    
+                    double first = Double.parseDouble(array[Index1_1][Index1_2]);
+                    double max = first;            //Suppose max the first element
+                    
+                    if(Index1_1 == Index2_1)
+                        for (int k = Index1_2; k <= Index2_2; k++) 
+                            if(max > Double.parseDouble(array[Index1_1][k]))
+                                max = Double.parseDouble(array[Index1_1][k]);
+
+                    else
+                        for (int m = Index1_1 + 1; m <= Index2_1; m++)
+                            for (int l = Index1_2 + 1; l <= Index2_2; l++)
+                                if(max > Double.parseDouble(array[m][l]))
+                                    max = Double.parseDouble(array[m][l]);
+                    return String.valueOf(max);
+                    
+                case "MIN":
+                    
+                     first = Double.parseDouble(array[Index1_1][Index1_2]);
+                    double min = first;            //Suppose max the first element
+                    
+                    if(Index1_1 == Index2_1)
+                        for (int k = Index1_2 + 1; k <= Index2_2; k++) 
+                            if(min < Double.parseDouble(array[Index1_1][k]))
+                                min = Double.parseDouble(array[Index1_1][k]);
+
+                    else
+                        for (int m = Index1_1 + 1; m <= Index2_1; m++)
+                            for (int l = Index1_2 + 1; l <= Index2_2; l++)
+                                if(min < Double.parseDouble(array[m][l]))
+                                    min = Double.parseDouble(array[m][l]);
+                    return String.valueOf(min);
+
+
+                case "AVE":
+                     sum = 0;
+                     double count = 0;
+                    if(Index1_1 == Index2_1)
+                        for (int k = Index1_2; k <= Index2_2; k++) 
+                            sum += Double.parseDouble(array[Index1_1][k]);
+                                                                                                  //                   0       1       2
+                    else                                                                       //A1:C2          0       1       2
+                        for (int k = Index1_1; k <= Index2_1; k++) 
+                            for (int l = Index1_2; l <= Index2_2; l++) 
+                                sum += Double.parseDouble(array[k][l]);
+
+                    double ava = sum / count;
+                    return String.valueOf(ava);
+                    
+                default:
+                     System.err.println("Error");
+                     return "-1";
+            }
     }
     
     
