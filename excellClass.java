@@ -74,7 +74,7 @@ public class excellClass {
     {                                                                     //  (row before coulmn)
        
         try{
-            
+        c = Character.toUpperCase(c);
         int j = c - 65;
         
         array[i-1][j] = item;  
@@ -91,6 +91,7 @@ public class excellClass {
     public String GetElement(char c , int i)
     {
         try{
+        c = Character.toUpperCase(c);
         int j = c - 65;
         
         return array[i-1][j];
@@ -105,6 +106,7 @@ public class excellClass {
     public void DelElement(char c , int i)
     {
         try{
+        c = Character.toUpperCase(c);
         int j = c - 65;
         array[i-1][j] = "--";
             System.out.println("Done");
@@ -123,6 +125,8 @@ public class excellClass {
             System.err.println("Invalid Equation");
             return;
         }
+        
+        c = Character.toUpperCase(c);
         
         int j= c - 65;
         i = i - 1;
