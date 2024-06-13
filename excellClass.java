@@ -320,7 +320,6 @@ public class excellClass {
                     return String.valueOf(ava);
                     
                 default:
-                     System.err.println("Error");
                      return "-1";
             }
     }

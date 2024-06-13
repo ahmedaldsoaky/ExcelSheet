@@ -39,8 +39,9 @@ public class ExcelSheet {
             System.out.println("Insert,         Get in a Specific place,        Delete and specific place, \n\nSearch by name, \tSearch by value, \n\nDelete by name, \tDelete by value, \n\nDisplay, \n\nMake an equation, \n\nRecursive this equation  ");
                     TimeUnit.SECONDS.sleep(1);
             System.err.println("\n\n\tPlease Select any of these characters \n\n");
-            System.out.println("i -> Insert        g -> Get in a Specific place        d -> Delete and specific place\n       \ns-n  -> Search by name        s-v  -> Search by value\n");
-            System.out.println("d-n -> Delete by name         d-v  ->  Delete by value       \nDs -> Display        \nm-e  -> Make an equation      \n r-e  -> Recursive this equation");
+            System.out.println("i -> Insert        g -> Get in a Specific place        d -> Delete and specific place\n-------------------\ns-n  -> Search by name        s-v  -> Search by value\n");
+            System.out.println("----------------------------------------------------------\n");
+            System.out.println("d-n -> Delete by name         d-v  ->  Delete by value       \nDs -> Display        \nm-e  -> Make an equation      \n-------------------\nr-e  -> Recursive this equation");
             TimeUnit.SECONDS.sleep(2);
             s = in.next();
             switch (s)
