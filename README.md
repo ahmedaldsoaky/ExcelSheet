@@ -14,17 +14,6 @@ It mimics basic spreadsheet behavior using **2D arrays**, allowing users to set 
 
 ---
 
-## 📂 Project Structure
-ExcelSheet/
-├── src/
-│ ├── ExcelSheet.java # main entry point
-│ ├── ExcelClass.java # helper class for cell operations
-├── output/
-│ └── Output.png # screenshot/sample output
-├── README.md # this file
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -62,6 +51,6 @@ Invalid input	B1 = Apple	Error: invalid input, expecting number
 
 - Performance optimizations for large sheets.
 
-### 👤 Author
-Ahmed Aldsoaky
-Computer Engineering Student, Al-Azhar University
+## 👤 Author
+### - Ahmed Aldsoaky
+### - Computer Engineering Student, Al-Azhar University
