@@ -33,7 +33,7 @@ ExcelSheet/
 - Basic familiarity with compiling and running Java programs
 
 
-###🧪 Example Usage
+### 🧪Example Usage
 Operation	Input / Command	Output / Behavior
 Set value	A1 = 5	Cell A1 is updated to 5
 Add two cells	A2 = A1 + 10	A2 becomes 15
@@ -42,34 +42,26 @@ Invalid input	B1 = Apple	Error: invalid input, expecting number
 
 📷 Also see Output.png for a sample screenshot.
 
-###⚙️ Design Decisions & Challenges
-2D arrays chosen for simplicity (fixed rows/columns).
+### ⚙️ Design Decisions & Challenges
+- 2D arrays chosen for simplicity (fixed rows/columns).
 
-Encapsulation: ExcelClass.java manages parsing, operations, and validation.
+- Encapsulation: ExcelClass.java manages parsing, operations, and validation.
 
-Reference parsing: e.g., converting B2 → correct row/column indices.
+- Reference parsing: e.g., converting B2 → correct row/column indices.
 
-Edge cases handled:
+### 🧩 Possible Improvements
+- Support formulas (e.g., SUM(A1:A5), AVERAGE, etc.).
 
-Division by zero
+- Dynamic resizing of rows/columns.
 
-Invalid cell references
+- Save/load sheet state (serialization).
 
-Non-numeric input
+- Add GUI (JavaFX/Swing) or a web frontend.
 
-###🧩 Possible Improvements
-Support formulas (e.g., SUM(A1:A5), AVERAGE, etc.).
+- Better error handling and unit tests.
 
-Dynamic resizing of rows/columns.
+- Performance optimizations for large sheets.
 
-Save/load sheet state (serialization).
-
-Add GUI (JavaFX/Swing) or a web frontend.
-
-Better error handling and unit tests.
-
-Performance optimizations for large sheets.
-
-###👤 Author
+### 👤 Author
 Ahmed Aldsoaky
 Computer Engineering Student, Al-Azhar University
