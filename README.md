@@ -23,9 +23,6 @@ ExcelSheet/
 │ └── Output.png # screenshot/sample output
 ├── README.md # this file
 
-yaml
-Copy code
-
 ---
 
 ## 🚀 Getting Started
@@ -35,24 +32,8 @@ Copy code
 - A terminal / command-line tool
 - Basic familiarity with compiling and running Java programs
 
-### How to Compile & Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/ahmedaldsoaky/ExcelSheet.git
-   cd ExcelSheet
-Compile the Java files:
 
-bash
-Copy code
-javac *.java
-Run the program:
-
-bash
-Copy code
-java ExcelSheet
-Follow the prompts in the console to enter commands or perform operations.
-
-🧪 Example Usage
+###🧪 Example Usage
 Operation	Input / Command	Output / Behavior
 Set value	A1 = 5	Cell A1 is updated to 5
 Add two cells	A2 = A1 + 10	A2 becomes 15
@@ -61,7 +42,7 @@ Invalid input	B1 = Apple	Error: invalid input, expecting number
 
 📷 Also see Output.png for a sample screenshot.
 
-⚙️ Design Decisions & Challenges
+###⚙️ Design Decisions & Challenges
 2D arrays chosen for simplicity (fixed rows/columns).
 
 Encapsulation: ExcelClass.java manages parsing, operations, and validation.
@@ -76,7 +57,7 @@ Invalid cell references
 
 Non-numeric input
 
-🧩 Possible Improvements
+###🧩 Possible Improvements
 Support formulas (e.g., SUM(A1:A5), AVERAGE, etc.).
 
 Dynamic resizing of rows/columns.
@@ -89,6 +70,6 @@ Better error handling and unit tests.
 
 Performance optimizations for large sheets.
 
-👤 Author
+###👤 Author
 Ahmed Aldsoaky
 Computer Engineering Student, Al-Azhar University
