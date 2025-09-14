@@ -52,5 +52,5 @@ Invalid input	B1 = Apple	Error: invalid input, expecting number
 - Performance optimizations for large sheets.
 
 ## 👤 Author
-### - Ahmed Aldsoaky
-### - Computer Engineering Student, Al-Azhar University
+### Ahmed Aldsoaky
+### Computer Engineering Student, Al-Azhar University
